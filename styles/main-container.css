@@ -1,0 +1,59 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.grid {
+  display: grid;
+  grid: auto / repeat(5, 1fr);
+  gap: 20px;
+}
+@media (max-width: 1278px) {
+  .grid {
+    grid: auto / repeat(4, 1fr);
+  }
+}
+@media (max-width: 1026px) {
+  .grid {
+    grid: auto / repeat(3, 1fr);
+  }
+}
+@media (max-width: 760px) {
+  .grid {
+    grid: auto / repeat(2, 1fr);
+  }
+}
+.character {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  background-color: var(--default-character-bg);
+  padding: 8px;
+  max-width: 250px;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.character:hover {
+  transform: scale(1.05);
+}
+.character-thumbnail {
+  margin-bottom: 10px;
+}
+.character-img {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.character-details {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 4px;
+}
+.character-name {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.character-origin,
+.character-status {
+  color: var(--detail-text);
+}

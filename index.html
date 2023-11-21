@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rick & Morty</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/main-container.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="header-lside">
+        <div class="header-logo">
+          <img class="logo-img" src="./img/logo.png" />
+        </div>
+      </div>
+
+      <div class="header-mside">
+        <div class="header-searchbar">
+          <input
+            type="text"
+            class="searchbar"
+            placeholder="Search for your character..."
+          />
+          <div class="header-searbar-btt">
+            <i class="bx bx-search"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-rside">
+        <div class="header-links">
+          <a href="#" class="link" id="home">Home</a>
+          <a href="#" class="link" id="characters">Characters</a>
+          <a href="#" class="link" id="locations">Locations</a>
+          <a href="#" class="link" id="episodes">Episodes</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <section class="grid"></section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-lside">
+        <p>&copy; 2023 ZC. All rights reserved.</p>
+      </div>
+      <div class="footer-rside">
+        <button class="to-top-btt">
+          <i class="bx bxs-to-top"></i>
+        </button>
+      </div>
+    </footer>
+
+    <script type="module" src="./scripts/main.js"></script>
+  </body>
+</html>

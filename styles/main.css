@@ -1,0 +1,35 @@
+:root {
+  --text-color: #fff;
+  --detail-text: rgb(173, 173, 173);
+  --background: rgb(22, 1, 27);
+  --green: rgb(192, 223, 64);
+  --blue: rgb(64, 182, 203);
+  --default-character-bg: rgba(64, 182, 203, 0.3);
+
+  /* Colores para las fichas de personajes */
+  --character-bg-1: #6c757d; /* Gris oscuro */
+  --character-bg-2: #007bff; /* Azul */
+  --character-bg-3: #28a745; /* Verde */
+  --character-bg-4: #dc3545; /* Rojo */
+  --character-bg-5: #ffc107; /* Amarillo */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: var(--text-color);
+}
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", Arial;
+  background-color: var(--background);
+  margin: 0 20px;
+  padding-top: 100px;
+}
+
+.max-lines {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

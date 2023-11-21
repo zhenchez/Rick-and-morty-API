@@ -1,0 +1,28 @@
+.footer-lside p {
+  position: fixed;
+  top: 160px;
+  right: 20px;
+  writing-mode: vertical-rl; /* Set vertical writing mode */
+  text-orientation: upright;
+  letter-spacing: -2px;
+}
+.to-top-btt {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--green);
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.to-top-btt:hover {
+  transform: scale(1.1);
+}
+.bxs-to-top {
+  font-size: 22px;
+  color: var(--blue);
+}
