@@ -1,4 +1,6 @@
-function generateCharacterHTML(items) {
+import { fetchColors } from "./colors.js";
+
+export function generateCharacterHTML(items) {
   const grid = document.querySelector(".grid");
   let allHTML = "";
   items.results.forEach(item => {
@@ -27,6 +29,7 @@ export function fetchCharacters(page) {
     .then(response => response.json())
     .then(data => {
       generateCharacterHTML(data);
+      fetchColors();
     })
     .catch(error => {
       console.error("Error fetching characters:", error);

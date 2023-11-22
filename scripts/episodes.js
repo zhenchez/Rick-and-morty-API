@@ -1,4 +1,6 @@
-function generateEpisodesHTML(items) {
+import { fetchColors } from "./colors.js";
+
+export function generateEpisodesHTML(items) {
   const grid = document.querySelector(".grid");
   let allHTML = "";
   items.results.forEach(item => {
@@ -23,6 +25,7 @@ export function fetchEpisodes(page) {
     .then(data => {
       console.log(data);
       generateEpisodesHTML(data);
+      fetchColors();
     })
     .catch(error => {
       console.error("Error fetching characters:", error);

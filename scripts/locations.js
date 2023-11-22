@@ -1,4 +1,6 @@
-function generateLocationsHTML(items) {
+import { fetchColors } from "./colors.js";
+
+export function generateLocationsHTML(items) {
   const grid = document.querySelector(".grid");
   let allHTML = "";
   items.results.forEach(item => {
@@ -23,6 +25,7 @@ export function fetchLocations(page) {
     .then(data => {
       console.log(data);
       generateLocationsHTML(data);
+      fetchColors();
     })
     .catch(error => {
       console.error("Error fetching characters:", error);
