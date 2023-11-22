@@ -57,3 +57,71 @@
 .character-status {
   color: var(--detail-text);
 }
+
+.main-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  margin: 40px;
+}
+.main-home-lside {
+  margin-right: 100px;
+}
+.main-home-title {
+  font-size: 3rem;
+  text-shadow: -2px 2px 6px var(--green);
+  margin-bottom: 16px;
+}
+.main-home-subtitle {
+  font-size: 1.3rem;
+  color: var(--detail-text);
+}
+.main-home-rside {
+  margin-left: 100px;
+}
+.main-home-img {
+  width: 100%;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  animation: first-animation 1s;
+}
+
+.page-handler {
+  position: fixed;
+  bottom: 20px;
+  opacity: 0.3;
+  transition: opacity 0.15s;
+}
+.page-handler-btt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--green);
+  border: none;
+  padding: 4px;
+  margin: 0 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.btt i {
+  color: var(--blue);
+  font-size: 24px;
+}
+.page-number {
+  font-weight: bold;
+  margin: 0 20px;
+  padding: 4px 10px;
+  background-color: rgba(64, 182, 203, 0.4);
+  border: 1px solid var(--green);
+  border-radius: 4px;
+}
+
+.invisible {
+  display: none;
+}

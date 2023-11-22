@@ -26,10 +26,21 @@ html {
   background-color: var(--background);
   margin: 0 20px;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .max-lines {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+}
+
+@keyframes first-animation {
+  0% {
+    width: 10px;
+    transform: rotate(360deg) translateY(-600px);
+  }
+  100% {
+    width: 100%;
+  }
 }
