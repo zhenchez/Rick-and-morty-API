@@ -41,19 +41,19 @@ function fetchData(type) {
 }
 
 function decideWhatFetch(type, currentIndex, maxPages) {
-  if (type === "character") {
+  if (type.includes("character")) {
     if (currentIndex >= 1 && currentIndex <= maxPages) {
-      fetchCharacters(currentIndex);
+      fetchCharacters(type, currentIndex);
       fetchColors();
     }
-  } else if (type === "location") {
+  } else if (type.includes("location")) {
     if (currentIndex >= 1 && currentIndex <= maxPages) {
-      fetchLocations(currentIndex);
+      fetchLocations(`?page=${currentIndex}`);
       fetchColors();
     }
   } else {
     if (currentIndex >= 1 && currentIndex <= maxPages) {
-      fetchEpisodes(currentIndex);
+      fetchEpisodes(`?page=${currentIndex}`);
       fetchColors();
     }
   }

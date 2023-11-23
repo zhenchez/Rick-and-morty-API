@@ -1,22 +1,22 @@
 import { generateCharacterHTML } from "./characters.js";
-import { generateLocationsHTML } from "./locations.js";
-import { generateEpisodesHTML } from "./episodes.js";
+import { cleanSelect } from "./locations.js";
 import { fetchColors } from "./colors.js";
 import { cleanMainHome, cleanGrid } from "./home.js";
 import { pageHandlerHTML, addEventPageHandler } from "./page-handler.js";
 
 export function addSearchBar() {
-  const searchBarData = document
-    .querySelector(".searchbar")
-    .value.toLowerCase();
-
   document.querySelector(".searchbar").addEventListener("keyup", () => {
-    fetch(`https://rickandmortyapi.com/api/character/?name=rick`)
+    cleanSelect();
+    const searchBarData = document
+      .querySelector(".searchbar")
+      .value.toLowerCase();
+    fetch(`https://rickandmortyapi.com/api/character/?name=${searchBarData}`)
       .then(response => response.json())
       .then(data => {
-        const totalPages = data.info.pages;
         cleanMainHome();
         cleanGrid();
+        pageHandlerHTML();
+        addEventPageHandler(`character/?name=${searchBarData}&`);
         generateCharacterHTML(data);
         fetchColors();
       })

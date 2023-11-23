@@ -1,5 +1,5 @@
 import { fetchCharacters } from "./characters.js";
-import { fetchLocations } from "./locations.js";
+import { fetchLocations, cleanSelect } from "./locations.js";
 import { fetchEpisodes } from "./episodes.js";
 import { cleanMainHome, generateHomeHTML, cleanGrid } from "./home.js";
 import {
@@ -9,6 +9,7 @@ import {
   hidePageHandler,
 } from "./page-handler.js";
 import { addSearchBar } from "./search.js";
+import { speakText } from "./speakText.js";
 
 function toTop() {
   document.querySelector(".to-top-btt").addEventListener("click", () => {
@@ -20,21 +21,23 @@ function home() {
   document.querySelector("#home").addEventListener("click", () => {
     cleanGrid();
     cleanPageHandler();
+    cleanSelect();
     generateHomeHTML();
   });
 }
-function characters() {
+export function characters() {
   document.querySelector("#characters").addEventListener("click", () => {
     cleanMainHome();
-    fetchCharacters(1);
+    cleanSelect();
+    fetchCharacters("character/?", 1);
     pageHandlerHTML();
-    addEventPageHandler("character");
+    addEventPageHandler("character/?");
   });
 }
 function locations() {
   document.querySelector("#locations").addEventListener("click", () => {
     cleanMainHome();
-    fetchLocations(1);
+    fetchLocations("?page=1");
     pageHandlerHTML();
     addEventPageHandler("location");
   });
@@ -42,7 +45,7 @@ function locations() {
 function episodes() {
   document.querySelector("#episodes").addEventListener("click", () => {
     cleanMainHome();
-    fetchEpisodes(1);
+    fetchEpisodes("?page=1");
     pageHandlerHTML();
     addEventPageHandler("episode");
   });
@@ -56,3 +59,4 @@ locations();
 episodes();
 hidePageHandler();
 addSearchBar();
+speakText();

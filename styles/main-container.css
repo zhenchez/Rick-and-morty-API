@@ -1,6 +1,7 @@
 .main-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   margin: 20px;
 }
 .grid {
@@ -29,14 +30,38 @@
   background-color: var(--default-character-bg);
   padding: 8px;
   max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   transition: transform 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+.character:hover::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 130%;
+  background: linear-gradient(var(--blue), var(--green));
+  animation: rotate 4s linear infinite;
+}
+.character::after {
+  content: "";
+  position: absolute;
+  background-color: var(--background);
+  border-radius: 8px;
+  inset: 4px;
 }
 .character:hover {
   transform: scale(1.05);
 }
 .character-thumbnail {
   margin-bottom: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 100;
 }
 .character-img {
   width: 100%;
@@ -45,9 +70,12 @@
 }
 .character-details {
   text-align: center;
+  width: 90%;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   padding: 4px;
+  position: relative;
+  z-index: 100;
 }
 .character-name {
   font-size: 1rem;
@@ -55,6 +83,7 @@
 }
 .character-origin,
 .character-status {
+  margin: 4px 0;
   color: var(--detail-text);
 }
 
@@ -92,6 +121,7 @@
   bottom: 20px;
   opacity: 0.3;
   transition: opacity 0.15s;
+  z-index: 200;
 }
 .page-handler-btt {
   display: flex;
@@ -124,6 +154,43 @@
   user-select: none;
 }
 
+.status-dot {
+  font-size: 14px;
+}
+.select {
+  margin-bottom: 20px;
+}
+.location-select,
+.ep-select {
+  width: 30vw;
+  background-color: transparent;
+  color: var(--green);
+  padding: 4px 10px;
+  border: 1px solid var(--green);
+  border-radius: 8px;
+}
+.location-select option,
+.ep-select option {
+  background-color: black;
+  color: var(--green);
+}
+
+.no-residents {
+  margin: 40px;
+  padding: 100px;
+  font-size: 60px;
+}
+
 .invisible {
   display: none;
+}
+
+.dot-red {
+  color: rgb(214, 61, 46);
+}
+.dot-green {
+  color: rgb(85, 204, 68);
+}
+.dot-gray {
+  color: rgb(158, 158, 158);
 }

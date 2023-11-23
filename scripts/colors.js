@@ -8,7 +8,7 @@ function updateCharacterCardColors(colors) {
     let style = document.createElement("style");
     style.textContent = `
       .color-bg-${index} {
-        background-color: #${matchColor[1]};
+        border: 2px solid #${matchColor[1]};
       }
     `;
     document.head.appendChild(style);

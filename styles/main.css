@@ -4,7 +4,7 @@
   --background: rgb(22, 1, 27);
   --green: rgb(192, 223, 64);
   --blue: rgb(64, 182, 203);
-  --default-character-bg: rgba(64, 182, 203, 0.3);
+  --default-character-bg: rgba(64, 182, 203, 0.1);
 
   /* Colores para las fichas de personajes */
   --character-bg-1: #6c757d; /* Gris oscuro */
@@ -42,5 +42,14 @@ html {
   }
   100% {
     width: 100%;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
