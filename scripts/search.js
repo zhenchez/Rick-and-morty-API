@@ -3,6 +3,7 @@ import { cleanSelect } from "./locations.js";
 import { fetchColors } from "./colors.js";
 import { cleanMainHome, cleanGrid } from "./home.js";
 import { pageHandlerHTML, addEventPageHandler } from "./page-handler.js";
+import { addEventSpeech } from "./speakText.js";
 
 export function addSearchBar() {
   document.querySelector(".searchbar").addEventListener("keyup", () => {
@@ -18,6 +19,7 @@ export function addSearchBar() {
         pageHandlerHTML();
         addEventPageHandler(`character/?name=${searchBarData}&`);
         generateCharacterHTML(data);
+        addEventSpeech();
         fetchColors();
       })
       .catch(error => {

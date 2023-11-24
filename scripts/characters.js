@@ -1,4 +1,5 @@
 import { fetchColors } from "./colors.js";
+import { addEventSpeech } from "./speakText.js";
 
 export function generateCharacterHTML(items) {
   const grid = document.querySelector(".grid");
@@ -35,6 +36,7 @@ export function fetchCharacters(type, page) {
     .then(response => response.json())
     .then(data => {
       generateCharacterHTML(data);
+      addEventSpeech();
       fetchColors();
     })
     .catch(error => {

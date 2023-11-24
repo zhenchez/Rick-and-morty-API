@@ -9,7 +9,6 @@ import {
   hidePageHandler,
 } from "./page-handler.js";
 import { addSearchBar } from "./search.js";
-import { speakText } from "./speakText.js";
 
 function toTop() {
   document.querySelector(".to-top-btt").addEventListener("click", () => {
@@ -59,4 +58,3 @@ locations();
 episodes();
 hidePageHandler();
 addSearchBar();
-speakText();
